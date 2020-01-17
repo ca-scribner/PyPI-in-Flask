@@ -1,0 +1,1 @@
+Toy Flask app that recreates the basics of PyPI as a way of learning Flask.

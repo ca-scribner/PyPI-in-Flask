@@ -1,5 +1,5 @@
-from services import package_service, user_service
-from viewmodels.shared.viewmodelbase import ViewModelBase
+from pypi_org.services import package_service, user_service
+from pypi_org.viewmodels.shared.viewmodelbase import ViewModelBase
 
 
 class IndexViewModel(ViewModelBase):

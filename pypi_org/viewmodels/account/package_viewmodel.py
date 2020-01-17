@@ -1,5 +1,5 @@
-from services import package_service
-from viewmodels.shared.viewmodelbase import ViewModelBase
+from pypi_org.services import package_service
+from pypi_org.viewmodels.shared.viewmodelbase import ViewModelBase
 
 
 class PackageViewModel(ViewModelBase):

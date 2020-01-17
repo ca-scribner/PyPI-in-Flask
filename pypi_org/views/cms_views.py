@@ -1,6 +1,6 @@
 import flask
 
-import services.cms_service as cms_service
+import pypi_org.services.cms_service as cms_service
 
 blueprint = flask.Blueprint('cms', __name__, template_folder='templates')
 

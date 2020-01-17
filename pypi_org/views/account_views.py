@@ -6,8 +6,6 @@ import pypi_org.infrastructure.cookie_auth as cookie_auth
 from pypi_org.viewmodels.account.index_viewmodel import IndexViewModel
 from pypi_org.viewmodels.account.login_viewmodel import LoginViewModel
 from pypi_org.viewmodels.account.register_viewmodel import RegisterViewModel
-from services import user_service
-from viewmodels.shared.viewmodelbase import ViewModelBase
 
 blueprint = flask.Blueprint("account", __name__, template_folder='templates')
 

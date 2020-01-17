@@ -1,11 +1,9 @@
 import flask
 
 from pypi_org.infrastructure.view_modifiers import response
-from pypi_org.services import package_service, user_service
 
-# Not sure what the names here mean
-from viewmodels.home.index_viewmodel import IndexViewModel
-from viewmodels.shared.viewmodelbase import ViewModelBase
+from pypi_org.viewmodels.home.index_viewmodel import IndexViewModel
+from pypi_org.viewmodels.shared.viewmodelbase import ViewModelBase
 
 blueprint = flask.Blueprint('home', __name__, template_folder='templates')
 

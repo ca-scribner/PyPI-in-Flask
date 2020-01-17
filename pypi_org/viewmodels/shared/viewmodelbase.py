@@ -5,7 +5,7 @@ from flask import Request
 
 from pypi_org.infrastructure import request_dict, cookie_auth
 from pypi_org.infrastructure.request_dict import RequestDictionary
-from services.user_service import find_user_by_id
+from pypi_org.services.user_service import find_user_by_id
 
 
 class ViewModelBase:

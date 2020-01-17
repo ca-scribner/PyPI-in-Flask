@@ -1,0 +1,27 @@
+{% extends "shared/_layout.html" %}
+{% block title %}Login to PyPI{% endblock %}
+
+{% block main_content %}
+
+    <div class="form-container">
+        <form action="" method="POST" class="account-form">
+            <h1>Login to PyPI</h1>
+            <input type="text" name="email_address" placeholder="Your email address" value="{{ email_address }}" class="form-control">
+            <input type="password" name="password" placeholder="Your password" value="{{ password }}" class="form-control">
+            <button type="submit" class="btn btn-danger">Login</button>
+{#            This somehow made the button, which because of the css styling on form.account-form button does not sit
+              inside the grey area, still sit inside the grey area! #}
+            <div style="clear: both;"></div>
+        </form>
+        {% if error %}
+            <div class="error-msg">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="/static/css/account.css"/>
+{% endblock %}

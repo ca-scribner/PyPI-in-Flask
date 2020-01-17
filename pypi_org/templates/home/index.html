@@ -1,0 +1,48 @@
+{% extends "shared/_layout.html" %}
+{% block main_content %}
+
+    <div class="hero">
+        <div class="hero-inner">
+            <h1>Find, install, and publish Python packages with the Python Package Index</h1>
+            <input type="text" placeholder="Search Projects" class="form-control">
+
+
+        </div>
+        or <a href="#">browse projects</a>
+    </div>
+
+    {#    zencoding to write next block:
+    div.pypi-stats>div.stat*3
+#}
+    <div class="pypi-stats">
+        {# this does not support f-string? #}
+{#        <div class="stat">{{ f"{package_count:,}" }} projects</div>#} {# <-- causes error #}
+        <div class="stat">{{ "{:,}".format(package_count) }} packages</div>
+        <div class="stat">{{ "{:,}".format(release_count) }} releases</div>
+        <div class="stat">{{ "{:,}".format(user_count) }} users</div>
+    </div>
+
+    {#    div.container>div.row>div.col-md-4*3#}
+    <div class="container project-list">
+        <div class="row main_row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 main_col">
+                <h2>New releases</h2>
+
+                <div class="subtitle">Hot off the preses: the newest project releases</div>
+
+
+                {% for r in releases %}
+                    {# div.project>div.title>a#}
+                    <div class="project">
+                        <div class="title"><a href="/project/{{ r.package.id }}">{{ r.package.id }} {{ r.version_text }}</a></div>
+                        <div class="desc">{{ r.package.summary }}</div>
+                    </div>
+
+                {% endfor %}
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+{% endblock %}

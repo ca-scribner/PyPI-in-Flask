@@ -1,0 +1,138 @@
+/*my own play with constants for shared colors, from
+https://stackoverflow.com/questions/4847850/is-it-possible-to-define-constants-in-css/48175165
+Seems like if you want to use a lot of this, there's extensions that do it better (eg: lessCSS)*/
+:root {
+    --hero-bkg-color: #006dad;
+    --content-bkg-color: #dfdfdf;
+    --primary-bkg-color: white;
+}
+
+body {
+    color: #222;
+    margin: 0px;
+    padding: 0px;
+    font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+    background-color: var(--hero-bkg-color);
+}
+
+.main_content {
+    background: var(--primary-bkg-color);
+    margin: 0px;
+    padding-bottom: 50px;
+}
+
+nav {
+    background-color: #2e82bc;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    height: 65px;
+}
+
+nav > a {
+    color: white;
+    margin-right: 10px;
+}
+
+/*This styles anything in a class == hero*/
+.hero {
+    background-color: var(--hero-bkg-color);
+    color: white;
+    /*these are top and bottom?*/
+    padding: 50px 0px;
+    text-align: center;
+
+}
+
+/*This styles anything in a class=hero <a></a> (eg: hyperlink)*/
+.hero a {
+    color: white;
+    text-decoration: underline;
+    font-size: 14px;
+
+}
+
+.hero h1 {
+    font-size: 28px;
+    margin-bottom: 30px
+}
+
+.hero-inner {
+    max-width: 500px;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+/*I could do the same for say any input box, h1, ...*/
+/*.hero input {*/
+/*    color: #dd141b;*/
+/*}*/
+
+/*.hero h1 {*/
+/*    padding-left: 100px;*/
+/*}*/
+
+.pypi-stats {
+    background-color: var(--content-bkg-color);
+    color: var(--hero-bkg-color);
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    padding: 10px 0px;
+    text-align: center;
+    border-top: 1px solid #c3c3c3;
+    border-bottom: 1px solid #c3c3c3;
+}
+
+.pypi-stats .stat {
+    /*instead of vertical.  Could also try handling like those grids from before, but this seems more like pypi site*/
+    display: inline-block;
+    min-width: 170px;
+    font-size: 16px;
+}
+
+.project-list h2 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.project-list .subtitle {
+    font-style: italic;
+}
+
+.project-list .project {
+    background-color: var(--content-bkg-color);
+    color: black;
+    border: 1px solid #c3c3c3;
+    padding: 10px;
+    /* margin-top is what adds space between each row.  Originally when I tried I got the same effect from wrapping
+    project class in project-container and adding padding to project-container, but this seems easier*/
+    margin-top: 15px;
+    margin-bot: 15px;
+    min-height: 45px;
+}
+
+.project-list .project a {
+    color: var(--hero-bkg-color);
+}
+
+.project-list .project .title {
+    font-size: 20px;
+}
+
+.project-list .project .desc {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 30px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+}

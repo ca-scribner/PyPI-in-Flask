@@ -255,7 +255,7 @@ def make_version_num(version_text):
 
 
 def do_load_files() -> List[dict]:
-    data_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../course_files/data/pypi-top-100'))
+    data_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../mock_data/pypi-top-100'))
     print("Loading files from {}".format(data_path))
     files = get_file_names(data_path)
     print("Found {:,} files, loading ...".format(len(files)), flush=True)

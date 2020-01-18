@@ -11,8 +11,8 @@ from dateutil.parser import parse
 
 # If outside pycharm, need something like this to get the pypi_org dir in scope.
 # Might have to fiddle with this - didnt test
-# sys.path.insert(0, os.path.abspath(os.path.join(
-#     os.path.dirname(__file__), "..", "..")))
+sys.path.insert(0, os.path.abspath(os.path.join(
+    os.path.dirname(__file__), "..", "..")))
 
 import pypi_org.data.db_session as db_session
 from pypi_org.infrastructure.num_convert import try_int

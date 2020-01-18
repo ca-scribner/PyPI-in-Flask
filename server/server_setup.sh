@@ -62,6 +62,10 @@ git clone https://github.com/ca-scribner/PyPI-in-Flask app_repo
 cd cd /apps/app_repo/
 pip install -r requirements.txt
 
+# Need a step here where I create our fake db.  In real applications we'd query an actual DB, not this local file,
+# so this wouldn't be necessary
+
+
 # Copy and enable the daemon
 sudo cp /apps/app_repo/server/pypi.service /etc/systemd/system/pypi.service
 

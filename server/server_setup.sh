@@ -2,11 +2,12 @@
 
 # Consider running these two commands separately
 # Do a reboot before continuing.
-apt update
-apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
 
-apt install zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo apt install zsh
+# What is this for?
+#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install some OS dependencies:
 sudo apt-get install -y -q build-essential git unzip zip nload tree
@@ -55,28 +56,31 @@ pip install --upgrade uwsgi
 
 # clone the repo:
 cd /apps
-git clone https://github.com/talkpython/data-driven-web-apps-with-flask app_repo
+git clone https://github.com/ca-scribner/PyPI-in-Flask app_repo
 
 # Setup the web app:
-cd cd /apps/app_repo/app/ch15_deploy/final/
+cd cd /apps/app_repo/
 pip install -r requirements.txt
 
 # Copy and enable the daemon
 sudo cp /apps/app_repo/server/pypi.service /etc/systemd/system/pypi.service
 
+# Start this as a service
 sudo systemctl start pypi
+# Look at it running
 sudo systemctl status pypi
+# Enable it as a service when system starts (so if we reboot, it will be up for us again automatically)
 sudo systemctl enable pypi
 
 # Setup the public facing server (NGINX)
-apt install nginx
+sudo apt install nginx
 
 # CAREFUL HERE. If you are using default, maybe skip this
-rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-enabled/default
 
-cp /apps/app_repo/app/ch15_deploy/final/server/pypi.nginx /etc/nginx/sites-enabled/pypi.nginx
-update-rc.d nginx enable
-service nginx restart
+sudo cp /apps/app_repo/server/pypi.nginx /etc/nginx/sites-enabled/pypi.nginx
+sudo update-rc.d nginx enable
+sudo service nginx restart
 
 
 # Optionally add SSL support via Let's Encrypt:
